@@ -79,12 +79,12 @@ function AddTodo() {
       >
           <input type='text'
           // placeholder='Enter a todo'
-          className=' w-96'
+          className=' w-96 rounded-lg  py-2'
           value={editTodoMsg}
           onChange={(e) => setEditTodoMsg(e.target.value)}
           />
           <button type='submit'
-          className='rounded-lg bg-green-400 w-40 '
+          className='rounded-lg bg-green-400 w-40 py-2 hover:bg-green-500'
           >
               Update Todo
           </button>
