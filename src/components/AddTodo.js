@@ -99,7 +99,7 @@ function AddTodo() {
           className="flex justify-center">
             <li key={todo.id} 
             // className='flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black '
-            className=' w-60 flex mt-4 justify-between items-center px-4 py-2 rounded bg-zinc-800'
+            className=' w-96 flex mt-4 justify-between items-center px-4 py-2 rounded bg-zinc-800'
             >
                 <div className=' outline-none w-full text-white text-left '>{todo.text}</div>
                 <button
