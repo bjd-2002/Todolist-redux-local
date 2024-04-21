@@ -58,16 +58,16 @@ function AddTodo() {
     <>
     { !editTodo && 
       <form onSubmit={addTodoHandler}
-      className='w-full'
+      className='w-full '
       >
           <input type='text'
           placeholder='Enter a todo'
-          className=' w-96'
+          className=' w-96 rounded-lg  py-2'
           value={input}
           onChange={(e) => setInput(e.target.value)}
           />
           <button type='submit'
-          className='rounded-lg bg-green-400 w-40 '
+          className='rounded-lg bg-green-400 w-40 py-2 hover:bg-green-500'
           >
               Add Todo
           </button>
@@ -91,12 +91,19 @@ function AddTodo() {
       </form>
 }
 
-      <div>Todos</div>
+      <div
+      >Todos</div>
+      
         {todos.map((todo) => (
-            <li key={todo.id} className='flex mt-4 justify-between items-center px-4 py-2 rounded bg-zinc-800'>
-                <div className='text-white'>{todo.text}</div>
+          <div 
+          className="flex justify-center">
+            <li key={todo.id} 
+            // className='flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black '
+            className=' w-60 flex mt-4 justify-between items-center px-4 py-2 rounded bg-zinc-800'
+            >
+                <div className=' outline-none w-full text-white text-left '>{todo.text}</div>
                 <button
-                className='inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 '
+                className='inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50'
                 onClick={ () => handleEditTodo(todo)}
                 >✏️</button>
                 <button
@@ -104,8 +111,9 @@ function AddTodo() {
                 onClick={() => dispatch(removeTodo(todo.id))}
                 >🗑️</button>
             </li>
-            
+            </div>
         ))}
+        
     </>
   )
 }
